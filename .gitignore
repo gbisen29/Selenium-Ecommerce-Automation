@@ -1,12 +1,8 @@
-# Build and test output
 target/
 test-output/
-
-# IDE files
+.settings/
 .classpath
 .project
-.settings/
-
-# IntelliJ (future safe)
+.mvn/
 .idea/
 *.iml

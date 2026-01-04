@@ -9,12 +9,14 @@ import pages.GoogleHomePage;
 public class BrowserTest extends BaseTest {
 
     @Test
-    public void verifyGoogleSearchBoxIsDisplayed() {
+    public void verifyGoogleSearchUsingKeyboard() {
 
         GoogleHomePage googleHomePage = new GoogleHomePage(driver);
 
-        boolean isDisplayed = googleHomePage.isSearchBoxDisplayed();
+        googleHomePage.searchUsingKeyboard("Selenium WebDriver");
 
-        Assert.assertTrue(isDisplayed, "Search box is not displayed on Google Home Page");
+        boolean resultLoaded = googleHomePage.isSearchResultPageLoaded("Selenium");
+
+        Assert.assertTrue(resultLoaded, "Search result page did not load properly");
     }
 }
